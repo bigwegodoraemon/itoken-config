@@ -1,12 +1,6 @@
 spring:
   application:
     name: itoken-eureka
-  boot:
-    admin:
-      client:
-        url: http://localhost:8084
-  zipkin:
-    base-url: http://localhost:9411
 
 server:
   port: 8761
@@ -15,16 +9,7 @@ eureka:
   instance:
     hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
-management:
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: health,info
+      defaultZone: http://localhost:8761/eureka/ http://localhost:8861/eureka/ http://localhost:8961/eureka/

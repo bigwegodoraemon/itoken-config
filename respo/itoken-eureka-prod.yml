@@ -1,6 +1,8 @@
 spring:
   application:
     name: itoken-eureka
+  zipkin:
+    base-url: http://10.0.0.11:9411
 
 server:
   port: 8761
